@@ -1,0 +1,83 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+1	simplex_HTML/7/bits/ios_base.h.gcov.html	/^<a name="1"><span class="lineNum">       1 <\/span>            : \/\/ Iostreams base classes -*- C++ -*-<\/a>$/;"	a
+1	simplex_HTML/7/iomanip.gcov.html	/^<a name="1"><span class="lineNum">       1 <\/span>            : \/\/ Standard stream manipulators -*- C++ -*-<\/a>$/;"	a
+1	simplex_HTML/7/iostream.gcov.html	/^<a name="1"><span class="lineNum">       1 <\/span>            : \/\/ Standard iostream objects -*- C++ -*-<\/a>$/;"	a
+1	simplex_HTML/7/limits.gcov.html	/^<a name="1"><span class="lineNum">       1 <\/span>            : \/\/ The template and inlines for the numeric_limits classes. -*- C++ -*-<\/a>$/;"	a
+1	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="1"><span class="lineNum">       1 <\/span>            : #include&lt;cassert&gt;<\/a>$/;"	a
+101	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="101"><span class="lineNum">     101 <\/span>            : }<\/a>$/;"	a
+117	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="117"><span class="lineNum">     117 <\/span><span class="lineCov">          1 : }<\/span><\/a>$/;"	a
+127	simplex_HTML/7/bits/ios_base.h.gcov.html	/^<a name="127"><span class="lineNum">     127 <\/span>            : <\/a>$/;"	a
+131	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="131"><span class="lineNum">     131 <\/span><span class="lineCov">          5 : }<\/span><\/a>$/;"	a
+148	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="148"><span class="lineNum">     148 <\/span>            : <\/a>$/;"	a
+16	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="16"><span class="lineNum">      16 <\/span>            :         <\/a>$/;"	a
+1600	simplex_HTML/7/limits.gcov.html	/^<a name="1600"><span class="lineNum">    1600 <\/span>            : <\/a>$/;"	a
+169	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="169"><span class="lineNum">     169 <\/span><span class="lineCov">          1 : }<\/span><\/a>$/;"	a
+200	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="200"><span class="lineNum">     200 <\/span>            : <\/a>$/;"	a
+222	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="222"><span class="lineNum">     222 <\/span><span class="lineNoCov">          0 : }<\/span><\/a>$/;"	a
+223	simplex_HTML/7/iomanip.gcov.html	/^<a name="223"><span class="lineNum">     223 <\/span>            :   *\/<\/a>$/;"	a
+23	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="23"><span class="lineNum">      23 <\/span><span class="lineCov">          3 :         }<\/span><\/a>$/;"	a
+233	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="233"><span class="lineNum">     233 <\/span><span class="lineCov">          1 : }<\/span><\/a>$/;"	a
+262	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="262"><span class="lineNum">     262 <\/span>            : <\/a>$/;"	a
+28	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="28"><span class="lineNum">      28 <\/span><span class="lineCov">         88 :         }<\/span><\/a>$/;"	a
+284	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="284"><span class="lineNum">     284 <\/span><span class="lineCov">          1 : }<\/span><\/a>$/;"	a
+297	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="297"><span class="lineNum">     297 <\/span><span class="lineCov">          1 :         writeMatrix(x, X);<\/span><\/a>$/;"	a
+33	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="33"><span class="lineNum">      33 <\/span>            :         }<\/a>$/;"	a
+38	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="38"><span class="lineNum">      38 <\/span>            :         }<\/a>$/;"	a
+44	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="44"><span class="lineNum">      44 <\/span>            : };<\/a>$/;"	a
+74	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="74"><span class="lineNum">      74 <\/span><span class="lineCov">          2 : }<\/span><\/a>$/;"	a
+81	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="81"><span class="lineNum">      81 <\/span>            : <\/a>$/;"	a
+89	simplex_HTML/home/levon/proffessor/simplex/simplex.cpp.gcov.html	/^<a name="89"><span class="lineNum">      89 <\/span>            : <\/a>$/;"	a
+Element_type	simplex.cpp	/^typedef float Element_type;$/;"	t	file:
+Element_type	simplex1.cpp	/^typedef float Element_type;$/;"	t	file:
+Matrix	simplex.cpp	/^class Matrix$/;"	c	file:
+Matrix	simplex1.cpp	/^class Matrix$/;"	c	file:
+divideFreeMember	simplex.cpp	/^void divideFreeMember(Matrix  x_before, std::size_t & column_index, std::size_t & row_index)$/;"	f
+divideFreeMember	simplex1.cpp	/^void divideFreeMember(Matrix &  x_before, std::size_t & column_index, std::size_t & row_index)$/;"	f
+dividePivotColumn	simplex.cpp	/^void dividePivotColumn( Matrix & x,  std::size_t & row , std::size_t & col)$/;"	f
+dividePivotColumn	simplex1.cpp	/^void dividePivotColumn( Matrix & x,  std::size_t & row , std::size_t & col)$/;"	f
+findMaxModuleElement	simplex.cpp	/^void findMaxModuleElement(const Matrix & x, std::size_t & column_index ) \/\/number of colum with abs max value$/;"	f
+findMaxModuleElement	simplex1.cpp	/^void findMaxModuleElement(const Matrix & x, std::size_t & column_index ) \/\/number of colum with abs max value$/;"	f
+findMaxValue	simplex1.cpp	/^void findMaxValue( Matrix & x , Element_type & max)$/;"	f
+findMinColumnElement	simplex.cpp	/^void findMinColumnElement(Matrix & x, std::size_t&  row_index)$/;"	f
+findMinColumnElement	simplex1.cpp	/^void findMinColumnElement(Matrix & x, std::size_t&  row_index)$/;"	f
+getCol	simplex.cpp	/^	size_t getCol() const$/;"	f	class:Matrix
+getCol	simplex1.cpp	/^	size_t getCol() const$/;"	f	class:Matrix
+getElement	simplex.cpp	/^	Element_type & getElement( const std::size_t i , const std::size_t j) const$/;"	f	class:Matrix
+getElement	simplex1.cpp	/^	Element_type & getElement( const std::size_t i , const std::size_t j) const$/;"	f	class:Matrix
+getRow	simplex.cpp	/^	size_t getRow() const$/;"	f	class:Matrix
+getRow	simplex1.cpp	/^	size_t getRow() const$/;"	f	class:Matrix
+initialize	simplex.cpp	/^	void initialize( const std::size_t r, const std::size_t c )$/;"	f	class:Matrix
+initialize	simplex1.cpp	/^	void initialize( const std::size_t r, const std::size_t c )$/;"	f	class:Matrix
+mColCount	simplex.cpp	/^	size_t mColCount;$/;"	m	class:Matrix	file:
+mColCount	simplex1.cpp	/^	size_t mColCount;$/;"	m	class:Matrix	file:
+mData	simplex.cpp	/^	Element_type * mData;$/;"	m	class:Matrix	file:
+mData	simplex1.cpp	/^	Element_type * mData;$/;"	m	class:Matrix	file:
+mRowCount	simplex.cpp	/^	size_t mRowCount;$/;"	m	class:Matrix	file:
+mRowCount	simplex1.cpp	/^	size_t mRowCount;$/;"	m	class:Matrix	file:
+main	simplex.cpp	/^int main()$/;"	f
+main	simplex1.cpp	/^int main()$/;"	f
+myAbs	simplex.cpp	/^Element_type   myAbs( Element_type   var)$/;"	f
+myAbs	simplex1.cpp	/^Element_type   myAbs( Element_type   var)$/;"	f
+myRound	simplex.cpp	/^Element_type  myRound( Element_type  varm)$/;"	f
+myRound	simplex1.cpp	/^Element_type  myRound( Element_type  varm)$/;"	f
+myRound_1	simplex.cpp	/^void myRound_1(Element_type varm, Element_type result)$/;"	f
+myRound_1	simplex1.cpp	/^void myRound_1(Element_type varm, Element_type result)$/;"	f
+readMatrix	simplex.cpp	/^void readMatrix( Matrix & matrix, std::ifstream & like_pipe )$/;"	f
+readMatrix	simplex1.cpp	/^void readMatrix( Matrix & matrix, std::ifstream & like_pipe )$/;"	f
+setElement	simplex.cpp	/^	void setElement( const std::size_t i, const std::size_t j,const  Element_type  e)$/;"	f	class:Matrix
+setElement	simplex1.cpp	/^	void setElement( const std::size_t i, const std::size_t j,const  Element_type  e)$/;"	f	class:Matrix
+showMatrix	simplex.cpp	/^void showMatrix( Matrix & x)$/;"	f
+showMatrix	simplex1.cpp	/^void showMatrix( Matrix & x)$/;"	f
+simplexMethod	simplex.cpp	/^void simplexMethod(const  Matrix & a, const  Matrix &b, Matrix &x)$/;"	f
+simplexMethod	simplex1.cpp	/^void simplexMethod(const  Matrix & a, const  Matrix &b, Matrix &x)$/;"	f
+substractPivotRow	simplex.cpp	/^void substractPivotRow( Matrix & x, std::size_t & index_row, std::size_t & index_column)$/;"	f
+substractPivotRow	simplex1.cpp	/^void substractPivotRow( Matrix & x, std::size_t & index_row, std::size_t & index_column)$/;"	f
+supplementStep	simplex.cpp	/^void supplementStep(const  Matrix & a, const  Matrix &b, Matrix &x)$/;"	f
+supplementStep	simplex1.cpp	/^void supplementStep(const  Matrix & a, const  Matrix &b, Matrix &x)$/;"	f
+writeMatrix	simplex.cpp	/^void writeMatrix(const Matrix & matrix , std::ofstream & like_pipe)$/;"	f
+writeMatrix	simplex1.cpp	/^void writeMatrix(const Matrix & matrix , std::ofstream & like_pipe)$/;"	f

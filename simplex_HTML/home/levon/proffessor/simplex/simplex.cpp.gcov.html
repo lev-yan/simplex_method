@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - launch.info - /home/levon/proffessor/simplex/simplex.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">home/levon/proffessor/simplex</a> - simplex.cpp<span style="font-size: 80%;"> (source / <a href="simplex.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">launch.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">131</td>
+            <td class="headerCovTableEntry">149</td>
+            <td class="headerCovTableEntryMed">87.9 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2019-07-26 11:46:32</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
+          </tr>
+          <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include&lt;cassert&gt;</a>
+<span class="lineNum">       2 </span>            : #include&lt;limits&gt;  //for numeric_limits
+<span class="lineNum">       3 </span>            : #include&lt;cstddef&gt; //std::size_t
+<span class="lineNum">       4 </span>            : #include&lt;fstream&gt;
+<span class="lineNum">       5 </span>            : #include&lt;iostream&gt; 
+<span class="lineNum">       6 </span>            : #include&lt;iomanip&gt; //for setw()
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : typedef float Element_type;
+<span class="lineNum">       9 </span>            : 
+<span class="lineNum">      10 </span>            : class Matrix
+<span class="lineNum">      11 </span>            : {
+<span class="lineNum">      12 </span>            :     private:
+<span class="lineNum">      13 </span>            :         size_t mColCount;
+<span class="lineNum">      14 </span>            :         size_t mRowCount;
+<span class="lineNum">      15 </span>            :         Element_type * mData;
+<a name="16"><span class="lineNum">      16 </span>            :         </a>
+<span class="lineNum">      17 </span>            :     public:
+<span class="lineNum">      18 </span><span class="lineCov">          3 :         void initialize( const std::size_t r, const std::size_t c )</span>
+<span class="lineNum">      19 </span>            :         {
+<span class="lineNum">      20 </span><span class="lineCov">          3 :                 mRowCount = r;</span>
+<span class="lineNum">      21 </span><span class="lineCov">          3 :                 mColCount = c;</span>
+<span class="lineNum">      22 </span><span class="lineCov">          3 :                 mData = new Element_type[r*c];</span>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          3 :         }</span></a>
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span><span class="lineCov">         88 :         void setElement( const std::size_t i, const std::size_t j,const  Element_type  e)</span>
+<span class="lineNum">      26 </span>            :         {
+<span class="lineNum">      27 </span><span class="lineCov">         88 :                 mData[i* mColCount + j] = e;</span>
+<a name="28"><span class="lineNum">      28 </span><span class="lineCov">         88 :         }</span></a>
+<span class="lineNum">      29 </span>            :         
+<span class="lineNum">      30 </span><span class="lineCov">        274 :         Element_type &amp; getElement( const std::size_t i , const std::size_t j) const</span>
+<span class="lineNum">      31 </span>            :         {
+<span class="lineNum">      32 </span><span class="lineCov">        274 :                 return mData[ i * mColCount + j ];</span>
+<a name="33"><span class="lineNum">      33 </span>            :         }</a>
+<span class="lineNum">      34 </span>            : 
+<span class="lineNum">      35 </span><span class="lineCov">        278 :         size_t getCol() const</span>
+<span class="lineNum">      36 </span>            :         {
+<span class="lineNum">      37 </span><span class="lineCov">        278 :                 return mColCount;</span>
+<a name="38"><span class="lineNum">      38 </span>            :         }</a>
+<span class="lineNum">      39 </span>            : 
+<span class="lineNum">      40 </span><span class="lineCov">         47 :         size_t getRow() const</span>
+<span class="lineNum">      41 </span>            :         {
+<span class="lineNum">      42 </span><span class="lineCov">         47 :                 return mRowCount;</span>
+<span class="lineNum">      43 </span>            :         }
+<a name="44"><span class="lineNum">      44 </span>            : };</a>
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span><span class="lineCov">          2 : void readMatrix( Matrix &amp; matrix, std::ifstream &amp; like_pipe )</span>
+<span class="lineNum">      47 </span>            :         {
+<span class="lineNum">      48 </span><span class="lineCov">          2 :         assert( like_pipe.is_open() );</span>
+<span class="lineNum">      49 </span><span class="lineCov">          2 :         std::size_t r= std::numeric_limits&lt;std::size_t&gt;::max();</span>
+<span class="lineNum">      50 </span><span class="lineCov">          2 :         like_pipe &gt;&gt; r;</span>
+<span class="lineNum">      51 </span><span class="lineCov">          2 :         assert(r &lt; std::numeric_limits&lt;Element_type&gt;::max() );</span>
+<span class="lineNum">      52 </span><span class="lineCov">          2 :         assert(r &gt; 0);</span>
+<span class="lineNum">      53 </span><span class="lineCov">          2 :         assert( like_pipe.is_open() );</span>
+<span class="lineNum">      54 </span><span class="lineCov">          2 :         std::size_t c = std::numeric_limits&lt;std::size_t&gt;::max();</span>
+<span class="lineNum">      55 </span><span class="lineCov">          2 :         like_pipe &gt;&gt; c;</span>
+<span class="lineNum">      56 </span><span class="lineCov">          2 :         assert(c &lt; std::numeric_limits&lt;Element_type&gt;::max() );</span>
+<span class="lineNum">      57 </span><span class="lineCov">          2 :         assert(c &gt; 0);</span>
+<span class="lineNum">      58 </span><span class="lineCov">          2 :         Element_type x = std::numeric_limits&lt;Element_type&gt;::max();</span>
+<span class="lineNum">      59 </span><span class="lineCov">          2 :         matrix.initialize(r,c);</span>
+<span class="lineNum">      60 </span>            : //      Element_type y = sizeof(matrix)/sizeof(matrix.getElement(0,0));//under construction
+<span class="lineNum">      61 </span>            :         //r = y * matrix.getCol();
+<span class="lineNum">      62 </span>            :         //std::cout &lt;&lt; y &lt;&lt; std::endl;
+<span class="lineNum">      63 </span>            :         //c = 
+<span class="lineNum">      64 </span><span class="lineCov">         10 :         for( std::size_t i = 0; i &lt; r; ++i)</span>
+<span class="lineNum">      65 </span>            :         {
+<span class="lineNum">      66 </span><span class="lineCov">         36 :                 for( std::size_t j=0; j&lt; c; ++j)</span>
+<span class="lineNum">      67 </span>            :                 {
+<span class="lineNum">      68 </span><span class="lineCov">         28 :                         like_pipe&gt;&gt; x; //OK version</span>
+<span class="lineNum">      69 </span><span class="lineCov">         28 :                         assert( x &lt; std::numeric_limits&lt;Element_type&gt;::max());</span>
+<span class="lineNum">      70 </span><span class="lineCov">         28 :                         matrix.setElement(i,j,x);</span>
+<span class="lineNum">      71 </span>            :                 }//end for(j;j;j)
+<span class="lineNum">      72 </span><span class="lineCov">          8 :                         std::cout &lt;&lt; std::endl;</span>
+<span class="lineNum">      73 </span>            :         }//end for(i;i;i)
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 : Element_type  myRound( Element_type  varm)</span>
+<span class="lineNum">      77 </span>            : {
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :         Element_type value = (int)(varm * 10000);</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :         return (Element_type)value/10000;</span>
+<span class="lineNum">      80 </span>            : }
+<a name="81"><span class="lineNum">      81 </span>            : </a>
+<span class="lineNum">      82 </span>            : 
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 : void myRound_1(Element_type varm, Element_type result)</span>
+<span class="lineNum">      84 </span>            : {
+<span class="lineNum">      85 </span><span class="lineNoCov">          0 :         Element_type value = ( int )( varm * 10000);</span>
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 :                 result = (Element_type)result/10000;</span>
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :                 std::cout &lt;&lt; result; </span>
+<span class="lineNum">      88 </span><span class="lineNoCov">          0 : }</span>
+<a name="89"><span class="lineNum">      89 </span>            : </a>
+<span class="lineNum">      90 </span>            : 
+<span class="lineNum">      91 </span><span class="lineCov">         12 : Element_type   myAbs( Element_type   var)</span>
+<span class="lineNum">      92 </span>            : {
+<span class="lineNum">      93 </span><span class="lineCov">         12 :         if( var &gt; 0) </span>
+<span class="lineNum">      94 </span>            :         {
+<span class="lineNum">      95 </span><span class="lineCov">          1 :                 return var;</span>
+<span class="lineNum">      96 </span>            :         }
+<span class="lineNum">      97 </span>            :         else
+<span class="lineNum">      98 </span>            :         {
+<span class="lineNum">      99 </span><span class="lineCov">         11 :                 return  (-1)* var;</span>
+<span class="lineNum">     100 </span>            :         }
+<a name="101"><span class="lineNum">     101 </span>            : }</a>
+<span class="lineNum">     102 </span>            : 
+<span class="lineNum">     103 </span><span class="lineCov">          1 : void writeMatrix(const Matrix &amp; matrix , std::ofstream &amp; like_pipe)</span>
+<span class="lineNum">     104 </span>            : {
+<span class="lineNum">     105 </span><span class="lineCov">          1 :         assert(like_pipe.good());</span>
+<span class="lineNum">     106 </span><span class="lineCov">          1 :         like_pipe&lt;&lt; matrix.getRow() &lt;&lt; &quot; &quot;;</span>
+<span class="lineNum">     107 </span><span class="lineCov">          1 :         assert(like_pipe.good());</span>
+<span class="lineNum">     108 </span><span class="lineCov">          1 :         like_pipe&lt;&lt; matrix.getCol() &lt;&lt; &quot;\n&quot;;</span>
+<span class="lineNum">     109 </span><span class="lineCov">          5 :         for(std::size_t i = 0; i &lt; matrix.getRow(); ++i)</span>
+<span class="lineNum">     110 </span>            :         {
+<span class="lineNum">     111 </span><span class="lineCov">         32 :                 for( std::size_t j = 0; j&lt; matrix.getCol(); ++j)</span>
+<span class="lineNum">     112 </span>            :                 {
+<span class="lineNum">     113 </span><span class="lineCov">         28 :                         like_pipe&lt;&lt; std::setw(10) &lt;&lt;  matrix.getElement(i,j)&lt;&lt; &quot; &quot;; //OK version</span>
+<span class="lineNum">     114 </span>            :                 }//end for(j;j;j)
+<span class="lineNum">     115 </span><span class="lineCov">          4 :                 like_pipe &lt;&lt; std::endl;</span>
+<span class="lineNum">     116 </span>            :         }//end for(i;i;i)       
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     118 </span>            : 
+<span class="lineNum">     119 </span><span class="lineCov">          5 : void showMatrix( Matrix &amp; x)</span>
+<span class="lineNum">     120 </span>            : {
+<span class="lineNum">     121 </span><span class="lineCov">          5 :         std::cout &lt;&lt; &quot;++++++++++++++++++++++++test+++++++++++++++++++++++++++++++++++++\n&quot;;</span>
+<span class="lineNum">     122 </span><span class="lineCov">         25 :         for(std::size_t i = 0; i &lt; x.getRow(); ++i)</span>
+<span class="lineNum">     123 </span>            :         {
+<span class="lineNum">     124 </span><span class="lineCov">        160 :                 for(std::size_t j = 0; j &lt; x.getCol(); ++j)</span>
+<span class="lineNum">     125 </span>            :                 {
+<span class="lineNum">     126 </span><span class="lineCov">        140 :                         std::cout &lt;&lt; std::setw(9) &lt;&lt; x.getElement(i,j) &lt;&lt; &quot; &quot;;</span>
+<span class="lineNum">     127 </span>            :                 }//end for(j;j;j)
+<span class="lineNum">     128 </span><span class="lineCov">         20 :                 std::cout &lt;&lt; std::endl;</span>
+<span class="lineNum">     129 </span>            :         }//end for(i;i;i)
+<span class="lineNum">     130 </span>            : 
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          5 : }</span></a>
+<span class="lineNum">     132 </span>            : 
+<span class="lineNum">     133 </span><span class="lineCov">          1 : void supplementStep(const  Matrix &amp; a, const  Matrix &amp;b, Matrix &amp;x)</span>
+<span class="lineNum">     134 </span>            : {
+<span class="lineNum">     135 </span><span class="lineCov">          5 :         for( std::size_t i = 0; i &lt; a.getRow(); ++i)</span>
+<span class="lineNum">     136 </span>            :         {
+<span class="lineNum">     137 </span><span class="lineCov">         32 :                 for( std::size_t j = 0; j &lt;= a.getCol(); ++j)</span>
+<span class="lineNum">     138 </span>            :                 {
+<span class="lineNum">     139 </span><span class="lineCov">         28 :                 Element_type temp_a = a.getElement( i,j);</span>
+<span class="lineNum">     140 </span><span class="lineCov">         28 :                 x.setElement(i,j, temp_a);</span>
+<span class="lineNum">     141 </span>            :         //      std::cout &lt;&lt; x.getElement(i,j) &lt;&lt; &quot; &quot;;
+<span class="lineNum">     142 </span>            :                 }//end for(j;j;j)
+<span class="lineNum">     143 </span><span class="lineCov">          4 :                 Element_type temp_b = b.getElement(i,0);</span>
+<span class="lineNum">     144 </span><span class="lineCov">          4 :                 x.setElement(i, a.getCol(), temp_b);</span>
+<span class="lineNum">     145 </span>            :         //      std::cout &lt;&lt;x.getElement(i,6 ) &lt;&lt; std::endl ;
+<span class="lineNum">     146 </span>            :         }//end for(i;i;i)
+<span class="lineNum">     147 </span><span class="lineCov">          1 : }</span>
+<a name="148"><span class="lineNum">     148 </span>            : </a>
+<span class="lineNum">     149 </span>            : 
+<span class="lineNum">     150 </span><span class="lineCov">          1 : void findMaxModuleElement(const Matrix &amp; x, std::size_t &amp; column_index ) //number of colum with abs max value</span>
+<span class="lineNum">     151 </span>            : {
+<span class="lineNum">     152 </span><span class="lineCov">          1 :         std::size_t row= x.getRow() - 1;</span>
+<span class="lineNum">     153 </span><span class="lineCov">          1 :         Element_type maxModule = 0;</span>
+<span class="lineNum">     154 </span><span class="lineCov">          1 :         maxModule = x.getElement(row,0);</span>
+<span class="lineNum">     155 </span><span class="lineCov">          7 :         for( std::size_t j = 1; j &lt; x.getCol(); ++j)</span>
+<span class="lineNum">     156 </span>            :         {
+<span class="lineNum">     157 </span><span class="lineCov">         10 :                 if( myAbs(maxModule) &lt;  myAbs(x.getElement( row,j)))</span>
+<span class="lineNum">     158 </span>            :                 {
+<span class="lineNum">     159 </span><span class="lineCov">          2 :                    maxModule  = x.getElement(row, j);</span>
+<span class="lineNum">     160 </span><span class="lineCov">          2 :                         column_index = j;</span>
+<span class="lineNum">     161 </span>            :                 }
+<span class="lineNum">     162 </span>            :                 else 
+<span class="lineNum">     163 </span>            :                 {
+<span class="lineNum">     164 </span><span class="lineCov">          4 :                         continue;</span>
+<span class="lineNum">     165 </span>            :                 }//end else
+<span class="lineNum">     166 </span>            :         }//end for(j;j;j)       
+<span class="lineNum">     167 </span>            : //      std::cout &lt;&lt; column_index&lt;&lt; std::endl;//test
+<span class="lineNum">     168 </span>            : //      std::cout &lt;&lt; maxModule &lt;&lt;std::endl;//test
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     170 </span>            : 
+<span class="lineNum">     171 </span><span class="lineCov">          1 : void divideFreeMember(Matrix  x_before, std::size_t &amp; column_index, std::size_t &amp; row_index)</span>
+<span class="lineNum">     172 </span>            : {
+<span class="lineNum">     173 </span>            :         //std::cout &lt;&lt; column_index  &lt;&lt; std::endl; //test
+<span class="lineNum">     174 </span><span class="lineCov">          1 :         std::size_t column = x_before.getCol() -1;</span>
+<span class="lineNum">     175 </span><span class="lineCov">          1 :         Element_type temp1 = x_before.getElement(0, column ) / x_before.getElement(0,column_index);</span>
+<span class="lineNum">     176 </span><span class="lineCov">          4 :         for(std::size_t i = 1; i&lt; x_before.getRow(); ++i)</span>
+<span class="lineNum">     177 </span>            :         {
+<span class="lineNum">     178 </span><span class="lineCov">          3 :                 Element_type temp2 = x_before.getElement(i, column ) / x_before.getElement(i,column_index);     </span>
+<span class="lineNum">     179 </span><span class="lineCov">          3 :                 if( x_before.getElement(i,column)  == 0 ) { temp2 = 0 ;}; // avoiding -0 result</span>
+<span class="lineNum">     180 </span>            :                 
+<span class="lineNum">     181 </span><span class="lineCov">          4 :                 if(temp2 != 0)</span>
+<span class="lineNum">     182 </span>            :                 {
+<span class="lineNum">     183 </span><span class="lineCov">          3 :                         if(temp1 &gt; temp2 )</span>
+<span class="lineNum">     184 </span>            :                         {
+<span class="lineNum">     185 </span><span class="lineCov">          1 :                                 row_index = i;</span>
+<span class="lineNum">     186 </span><span class="lineCov">          1 :                                 temp1 = temp2;</span>
+<span class="lineNum">     187 </span>            :                         }//end if
+<span class="lineNum">     188 </span>            :                         else 
+<span class="lineNum">     189 </span>            :                         {
+<span class="lineNum">     190 </span><span class="lineCov">          1 :                         continue;       </span>
+<span class="lineNum">     191 </span>            :                         }//end else
+<span class="lineNum">     192 </span>            :                 }//end if
+<span class="lineNum">     193 </span>            :                 else 
+<span class="lineNum">     194 </span>            :                 {
+<span class="lineNum">     195 </span><span class="lineCov">          1 :                         continue;</span>
+<span class="lineNum">     196 </span>            :                 }
+<span class="lineNum">     197 </span>            :         }//end for
+<span class="lineNum">     198 </span>            :         //      std::cout &lt;&lt; &quot;temp2 = &quot; &lt;&lt; temp1 &lt;&lt; &quot; index = &quot; &lt;&lt; column_index &lt;&lt; std::endl;//test
+<span class="lineNum">     199 </span><span class="lineCov">          1 : }</span>
+<a name="200"><span class="lineNum">     200 </span>            : </a>
+<span class="lineNum">     201 </span>            : 
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 : void findMinColumnElement(Matrix &amp; x, std::size_t&amp;  row_index)</span>
+<span class="lineNum">     203 </span>            : {
+<span class="lineNum">     204 </span><span class="lineNoCov">          0 :         std::size_t column = x.getCol()-1;</span>
+<span class="lineNum">     205 </span><span class="lineNoCov">          0 :         Element_type value  = x.getElement(0,column); //; = x.getElement(0,column );</span>
+<span class="lineNum">     206 </span><span class="lineNoCov">          0 :         for( std::size_t i = 0; i &lt; x.getRow(); ++i)</span>
+<span class="lineNum">     207 </span>            :         {
+<span class="lineNum">     208 </span><span class="lineNoCov">          0 :                 if( value &lt; x.getElement(i,column) )</span>
+<span class="lineNum">     209 </span>            :                 {
+<span class="lineNum">     210 </span><span class="lineNoCov">          0 :                         continue;</span>
+<span class="lineNum">     211 </span>            :                 }//end if
+<span class="lineNum">     212 </span>            :                 else
+<span class="lineNum">     213 </span>            :                 {
+<span class="lineNum">     214 </span><span class="lineNoCov">          0 :                         if( x.getElement(i, column) != 0 )</span>
+<span class="lineNum">     215 </span>            :                         {       
+<span class="lineNum">     216 </span><span class="lineNoCov">          0 :                         value = x.getElement(i,column);</span>
+<span class="lineNum">     217 </span><span class="lineNoCov">          0 :                         row_index = i;</span>
+<span class="lineNum">     218 </span>            :                         }//end if
+<span class="lineNum">     219 </span>            :                 }//end else
+<span class="lineNum">     220 </span>            :         }//end for(i;i;i)
+<span class="lineNum">     221 </span>            : //      std::cout &lt;&lt;&quot;\n &quot; &lt;&lt;  value &lt;&lt; &quot; &quot; &lt;&lt; row_index &lt;&lt; std::endl; //test
+<a name="222"><span class="lineNum">     222 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     223 </span>            : 
+<span class="lineNum">     224 </span><span class="lineCov">          1 : void dividePivotColumn( Matrix &amp; x,  std::size_t &amp; row , std::size_t &amp; col)</span>
+<span class="lineNum">     225 </span>            : {
+<span class="lineNum">     226 </span><span class="lineCov">          1 :         Element_type pivot = x.getElement(row,col);</span>
+<span class="lineNum">     227 </span><span class="lineCov">          1 :         Element_type temp =0;</span>
+<span class="lineNum">     228 </span><span class="lineCov">          8 :         for( std::size_t j=0; j&lt; x.getCol() ; ++j  )</span>
+<span class="lineNum">     229 </span>            :         {
+<span class="lineNum">     230 </span><span class="lineCov">          7 :                 temp =x.getElement(row, j) / pivot;</span>
+<span class="lineNum">     231 </span><span class="lineCov">          7 :                 x.setElement(row,j,temp );</span>
+<span class="lineNum">     232 </span>            :         }//end for
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     234 </span>            : 
+<span class="lineNum">     235 </span><span class="lineCov">          1 : void substractPivotRow( Matrix &amp; x, std::size_t &amp; index_row, std::size_t &amp; index_column)</span>
+<span class="lineNum">     236 </span>            : {
+<span class="lineNum">     237 </span><span class="lineCov">          1 :         Element_type temp = 0;</span>
+<span class="lineNum">     238 </span><span class="lineCov">          1 :         Element_type coef = 0;</span>
+<span class="lineNum">     239 </span><span class="lineCov">          5 :         for(std::size_t i =0; i &lt; x.getRow(); ++i)</span>
+<span class="lineNum">     240 </span>            :         {
+<span class="lineNum">     241 </span><span class="lineCov">          4 :                 coef = x.getElement(i ,index_column);  // x.getElement( i,j);</span>
+<span class="lineNum">     242 </span><span class="lineCov">         32 :                 for( std::size_t j = 0; j &lt; x.getCol(); ++j)</span>
+<span class="lineNum">     243 </span>            :                 {
+<span class="lineNum">     244 </span><span class="lineCov">         35 :                         if(i != index_row)</span>
+<span class="lineNum">     245 </span>            :                         {
+<span class="lineNum">     246 </span><span class="lineCov">         21 :                            temp = x.getElement(i,j)- x.getElement(index_row,j)*coef;</span>
+<span class="lineNum">     247 </span><span class="lineCov">         21 :                            if( temp == -0)</span>
+<span class="lineNum">     248 </span>            :                            {
+<span class="lineNum">     249 </span><span class="lineCov">          9 :                                    temp = 0;</span>
+<span class="lineNum">     250 </span>            :                            }
+<span class="lineNum">     251 </span>            :                            else
+<span class="lineNum">     252 </span>            :                            {
+<span class="lineNum">     253 </span><span class="lineCov">         12 :                                   temp = temp;</span>
+<span class="lineNum">     254 </span>            :                            }
+<span class="lineNum">     255 </span><span class="lineCov">         21 :                            x.setElement(i,j,temp);</span>
+<span class="lineNum">     256 </span>            :                         }//end if
+<span class="lineNum">     257 </span>            :                         else
+<span class="lineNum">     258 </span><span class="lineCov">          7 :                         { continue;}</span>
+<span class="lineNum">     259 </span>            :                 }//for(j;j;j)
+<span class="lineNum">     260 </span>            :         }//end for(i;i;i)
+<span class="lineNum">     261 </span><span class="lineCov">          1 : }</span>
+<a name="262"><span class="lineNum">     262 </span>            : </a>
+<span class="lineNum">     263 </span>            : 
+<span class="lineNum">     264 </span><span class="lineCov">          1 : void simplexMethod(const  Matrix &amp; a, const  Matrix &amp;b, Matrix &amp;x)</span>
+<span class="lineNum">     265 </span>            : {
+<span class="lineNum">     266 </span><span class="lineCov">          1 :         std::size_t index_column = 0;</span>
+<span class="lineNum">     267 </span><span class="lineCov">          1 :         std::size_t index_row = 0;</span>
+<span class="lineNum">     268 </span><span class="lineCov">          1 :         supplementStep(a,b,x);                         //...DONE</span>
+<span class="lineNum">     269 </span>            :         
+<span class="lineNum">     270 </span>            : //      if()
+<span class="lineNum">     271 </span><span class="lineCov">          1 :         showMatrix(x);</span>
+<span class="lineNum">     272 </span><span class="lineCov">          1 :         findMaxModuleElement(x, index_column);          //..DONE</span>
+<span class="lineNum">     273 </span><span class="lineCov">          1 :         showMatrix(x);</span>
+<span class="lineNum">     274 </span><span class="lineCov">          1 :         divideFreeMember( x,index_column,  index_row);  //..DONE </span>
+<span class="lineNum">     275 </span><span class="lineCov">          1 :         showMatrix(x);</span>
+<span class="lineNum">     276 </span><span class="lineCov">          1 :         dividePivotColumn(x, index_row, index_column);  //..DONE</span>
+<span class="lineNum">     277 </span><span class="lineCov">          1 :         showMatrix(x);</span>
+<span class="lineNum">     278 </span><span class="lineCov">          1 :         substractPivotRow(x, index_row, index_column);  //..DONE</span>
+<span class="lineNum">     279 </span><span class="lineCov">          1 :         showMatrix(x);</span>
+<span class="lineNum">     280 </span>            :         
+<span class="lineNum">     281 </span>            : 
+<span class="lineNum">     282 </span>            :         
+<span class="lineNum">     283 </span>            :         //      std::cout &lt;&lt; &quot;index_col = &quot; &lt;&lt; index_column &lt;&lt; &quot; \n index_row = &quot; &lt;&lt; index_row &lt;&lt; &quot;\n&quot;;//test
+<a name="284"><span class="lineNum">     284 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     285 </span>            : 
+<span class="lineNum">     286 </span><span class="lineCov">          1 : int main()</span>
+<span class="lineNum">     287 </span>            : {
+<span class="lineNum">     288 </span>            :         Matrix a;
+<span class="lineNum">     289 </span>            :         Matrix b;
+<span class="lineNum">     290 </span>            :         Matrix x;
+<span class="lineNum">     291 </span><span class="lineCov">          2 :         std::ifstream A(&quot;A.txt&quot;), B(&quot;B.txt&quot;);</span>
+<span class="lineNum">     292 </span><span class="lineCov">          2 :         std::ofstream X(&quot;x.txt&quot;);</span>
+<span class="lineNum">     293 </span><span class="lineCov">          1 :         readMatrix(a,A); </span>
+<span class="lineNum">     294 </span><span class="lineCov">          1 :         readMatrix(b,B);</span>
+<span class="lineNum">     295 </span><span class="lineCov">          1 :         x.initialize(a.getRow() ,a.getCol() + 1);</span>
+<span class="lineNum">     296 </span><span class="lineCov">          1 :         simplexMethod( a, b, x);</span>
+<a name="297"><span class="lineNum">     297 </span><span class="lineCov">          1 :         writeMatrix(x, X);</span></a>
+<span class="lineNum">     298 </span><span class="lineCov">          1 :         return 0;</span>
+<span class="lineNum">     299 </span><span class="lineCov">          3 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
